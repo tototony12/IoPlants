@@ -1,0 +1,15 @@
+### Read Channel Feed
+GET https://api.thingspeak.com/channels/1022210/feeds.json?api_key=3VWIKNLDKPAJAING&results=2
+Content-Type: application/json
+
+### Read a Channel Field
+GET https://api.thingspeak.com/channels/1022210/fields/1.json?api_key=3VWIKNLDKPAJAING&results=2
+Content-Type: application/json
+
+### Read Channel Status Updates
+GET https://api.thingspeak.com/channels/1022210/status.json?api_key=3VWIKNLDKPAJAING
+Content-Type: application/json
+
+### Write a Channel Feed
+GET https://api.thingspeak.com/update?api_key=CKRSUZVI72EZRI14&field1=Jitomate&field2=22&field3=250
+Content-Type: application/json
