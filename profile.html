@@ -11,7 +11,7 @@
 <body onload="ponLoad()">
   <!-- INICIO BARRA-->
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <a class="navbar-brand" href="index.html">Title</a>
+    <a class="navbar-brand" href="index.html">Tus cultivos</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
       aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
@@ -28,20 +28,22 @@
 </nav>
 <!-- FIN BARRA -->
 
+  <!-- INICIO DATOS-->
   <div class="modal-dialog text-center">
     <div class="col-sm-8 main-section">
+      <!---Start of content--->
       <div class="modal-content">
-        <p></p>
+        <p ></p>
         <form class=col-12>
-          <div class="form-group">
+          <p >Datos del usuario</p>
+          <div class="form-group" >
             <input id="userEmail" type="email" class="form-control" placeholder="User" disabled = false>
           </div>
           <div class="form-group">
             <input id="userPassword" type="password" class="form-control" placeholder="Password">
           </div>
 
-          <button type="submit" class="btn" onclick="editUsr()">
-            <i class="fas fa-sign-in-alt"></i>
+          <button type="button" class="btn" onclick="editUsr()" id="profileButton">
             Edit
           </button>
         </form>
@@ -49,6 +51,7 @@
       <!---End of content--->
     </div>
   </div>
+  <!-- FIN DATOS -->
 
   <script src="JS/profile.js"></script>
 

@@ -2,41 +2,41 @@
 localStorage.sessionId;
 localStorage.sessionEmail;
 localStorage.userId;
+localStorage.btnState;
 
 //VARIABLES FROM INPUT TEXTS
 let userEmail = document.querySelector('#userEmail');
 let userPassword = document.querySelector('#userPassword');
+let profileButton = document.querySelector('#profileButton');
 
-//ON LOAD
+//CARGA DATOS DEL USUARIO Y VALIDAR USUARIO LOGUEADO
 function ponLoad() {
+    console.log("usuario logueado");
     userPassword.value = "Textoplano";
     userEmail.value = localStorage.sessionEmail;
     userEmail.disabled = true;
     userPassword.disabled = true;
+    localStorage.btnState = "edit";
+    
+    if (localStorage.sessionId == undefined || localStorage.sessionId == "") {
+        console.log("no hay usuario logueado");
+        window.location.href="login.html";
+    } 
 }
 
 //CLICK EDIT
 function editUsr() {
-    let xhr = new XMLHttpRequest();
-    console.log(userEmail.value);
-    let endpoint = `http://localhost:3000/users/?Email=${userEmail.value}`
-    xhr.open('GET', endpoint);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send();
-    xhr.onload = () => {
-        if (xhr.status == 200) {
-            let user = JSON.parse(xhr.response);
-            if (user[0].Password == userPassword.value) {
-                alert(`Bienvenido ${user[0].Email}`);
-                localStorage.sessionId = "TOKEN";
-                localStorage.sessionEmail = user[0].Email;
-                localStorage.userId = user[0].id;
-                window.location.href="index.html";
-            }else{
-                alert("Usuario o contraseña incorrectos");
-            }
-        } else if (xhr.status == 404) {
-            alert("Error de conexion");
-        }
+    if(localStorage.btnState == "edit"){
+        userEmail.value = localStorage.sessionEmail;
+        userEmail.disabled = false;
+        userPassword.disabled = false;
+        userPassword.value = "";
+        profileButton.innerHTML = "Save";
+        localStorage.btnState = "save";
+    }
+    else{
+        localStorage.btnState = "edit";
+        localStorage.clear();
+        window.location.href="login.html";
     }
 }

@@ -13,3 +13,9 @@ Content-Type: application/json
 ### Write a Channel Feed
 GET https://api.thingspeak.com/update?api_key=O7YT8XMI4GG4HO0K&field1=0
 Content-Type: application/json
+
+
+
+### SERVER USER
+PUT http://localhost:3000/users/
+Content-Type: application/json
