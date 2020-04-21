@@ -36,6 +36,28 @@ function editUsr() {
     }
     else{
         localStorage.btnState = "edit";
+        
+        let user = {};
+
+        user.email =  userEmail.value;
+        user.password = userPassword.value;
+    
+        console.log(localStorage.sessionEmail);
+
+
+        let xhr = new XMLHttpRequest();
+        let endpoint = `http://localhost:3000/api/users/${localStorage.sessionEmail}`
+        xhr.open('PUT', endpoint);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(user));
+        xhr.onload = () => {
+            if(xhr.status == 201){
+                alert("User changed");
+            }else{
+                console.log(xhr.response);
+                alert('Error');
+            }
+        }
         window.location.href="index.html";
     }
 }
