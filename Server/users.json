@@ -1,0 +1,12 @@
+ [
+      {
+        "id": 1,
+        "email": "correo@iteso.mx",
+        "password": "pass"
+      },
+      {
+        "id": 2,
+        "email": "is9@iteso.mx",
+        "password": "pass"
+      }
+    ]

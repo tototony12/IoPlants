@@ -10,25 +10,28 @@ let userPassword = document.querySelector('#userPassword');
 //CLICK LOGIN
 function logIn() {
     let xhr = new XMLHttpRequest();
-    console.log(userEmail.value);
-    let endpoint = `http://localhost:3000/users/?Email=${userEmail.value}`
-    xhr.open('GET', endpoint);
+    let data = {};
+
+    data.email = userEmail;
+    data.password = userPassword;
+
+    let endpoint = `http://localhost:3000/api/login`
+    xhr.open('POST', endpoint);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send();
+    xhr.send(JSON.stringify({
+        "email":data.email.value,
+        "password":data.password.value
+      }));
     xhr.onload = () => {
         if (xhr.status == 200) {
             let user = JSON.parse(xhr.response);
-            if (user[0].Password == userPassword.value) {
-                alert(`Bienvenido ${user[0].Email}`);
-                localStorage.sessionId = "TOKEN";
-                localStorage.sessionEmail = user[0].Email;
-                localStorage.userId = user[0].id;
-                window.location.href="index.html";
-            }else{
-                alert("Usuario o contraseña incorrectos");
-            }
+            console.log(JSON.parse(xhr.response));
+            alert(`Bienvenido ${xhr.response.email}`);
+            localStorage.sessionId = "TOKEN";
+            localStorage.sessionEmail = xhr.response.email;
+            window.location.href="index.html";
         } else if (xhr.status == 404) {
-            alert("Error de conexion");
+            alert("Usuario o contraseña incorrectos");
         }
     }
 }
