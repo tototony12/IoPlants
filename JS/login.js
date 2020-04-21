@@ -26,9 +26,9 @@ function logIn() {
         if (xhr.status == 200) {
             let user = JSON.parse(xhr.response);
             console.log(JSON.parse(xhr.response));
-            alert(`Bienvenido ${xhr.response.email}`);
+            alert(`Bienvenido ${user.email}`);
             localStorage.sessionId = "TOKEN";
-            localStorage.sessionEmail = xhr.response.email;
+            localStorage.sessionEmail = user.email;
             window.location.href="index.html";
         } else if (xhr.status == 404) {
             alert("Usuario o contraseña incorrectos");
