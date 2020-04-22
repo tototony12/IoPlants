@@ -1,5 +1,5 @@
 ### Read Channel Feed
-GET https://api.thingspeak.com/channels/1023068/feeds.json?api_key=OFB0NR74DCYEUVNX&results=2
+get https://api.thingspeak.com/channels/1023068/feeds.json?api_key=OFB0NR74DCYEUVNX&results=2
 Content-Type: application/json
 
 ### Read a Channel Field

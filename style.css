@@ -3,6 +3,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .main-section {
@@ -84,12 +87,8 @@ button{
     justify-content:space-evenly;
     align-items: stretch;
     margin: 50px;
+    
 }
-
-
-
-
-
 
 
 
