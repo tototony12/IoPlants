@@ -86,10 +86,11 @@ button{
     flex-direction: row;
     justify-content:space-evenly;
     align-items: stretch;
-    margin: 50px;
-    
 }
 
+.item{
+    margin: 10px;
+}
 
 
 
