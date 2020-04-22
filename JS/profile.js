@@ -53,11 +53,12 @@ function editUsr() {
         xhr.onload = () => {
             if(xhr.status == 201){
                 alert("User changed");
+                window.location.href="index.html";
             }else{
                 console.log(xhr.response);
                 alert('Error');
             }
         }
-        window.location.href="index.html";
+        
     }
 }

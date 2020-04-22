@@ -15,6 +15,7 @@ GET https://api.thingspeak.com/update?api_key=O7YT8XMI4GG4HO0K&field1=0
 Content-Type: application/json
 
 
-### SERVER USER
-PUT http://localhost:3000/users/
+
+### Read Channel Feed
+get https://api.thingspeak.com/channels/1023068/feeds.json?api_key=OFB0NR74DCYEUVNX&results=field1&average
 Content-Type: application/json

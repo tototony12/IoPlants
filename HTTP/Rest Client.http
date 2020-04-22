@@ -31,6 +31,6 @@ PUT http://localhost:3000/api/users/correo@iteso.mx
 Content-Type: application/json;charset=utf-8
 
 {
-    "email":"diego@iteso.mx",
+    "email":"correo@iteso.mx",
     "password":"diego"
 }
