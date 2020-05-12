@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Equipo 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="onLoad()" background="pictures/p3.jpg">
+  <!-- INICIO BARRA-->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <a class="navbar-brand" href="index.html">Tus cultivos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+        <!--<li class="nav-item"><a href="blog.html" class="nav-link">Contac Us</a></li>-->
+        <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+        <a class="nav-item"><a href="login.html" class="nav-link" id="signOut">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- FIN BARRA -->
+
+  <!-- INICIO JUMOBTRON-->
+  <div class="container p-3 my-3 border" style="background-color:white;">
+    <div class="container" style="justify-content: space-between; flex-direction: row;">
+      <div class="col-md-6">
+        <h1>Bienvenido</h1>
+        <p>Seleccione la planta que desee monitorear</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="font-size: 90%;">
+            Seleccionar una opcion
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" onclick="jitomate()">Jitomate</a>
+            <a class="dropdown-item" href="#" onclick="lechuga()">Lechuga</a>
+            <a class="dropdown-item" href="#" onclick="cebolla()">Cebolla</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-24" style="display:none ;" id="imagenPlanta">
+        <img id="img" src="" alt="..." class="img-thumbnail" style="height: 200px; width: 200px;">
+      </div>
+    </div>
+  </div>
+  <!-- FIN JUMOBTRON-->
+
+  <!-- INICIO GRAFICAS-->
+  <div class="container p-3 my-3 border" id="graficas" style="background-color:white; display: none;">
+
+    <div class="container" style="justify-content: space-between; flex-direction: row;">
+      <h1 style="margin-top: 15px;" id="nombrePlanta">Bienvenido</h1>
+    </div>
+    <div class="container p-3 my-3 border" style="justify-content: space-between; flex-direction: row;">
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Informacion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Humedad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            aria-selected="false">Luminosidad</a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+        <!--INFO-->
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p></p>     <p></p>
+          <div class="container" style="justify-content: space-between; flex-direction: row;">
+            <div class="col">
+              <p>
+                Solanum lycopersicum, la tomatera, es una planta de la familia de las solanáceas (Solanaceae) originaria
+                de
+                América y cultivada en todo el mundo por su fruto comestible, llamado tomate (o jitomate en el centro de
+                México). Dicho fruto es una baya muy coloreada cuando madura, típicamente de tonos que van del
+                amarillento
+                al rojo, debido a la presencia de los pigmentos licopeno y caroteno. Posee un sabor ligeramente ácido,
+                mide
+                de 1 a 2 cm de diámetro en las especies silvestres, y es mucho más grande en las variedades cultivadas.
+                Se
+                produce y consume en todo el mundo tanto fresco como procesado de diferentes modos, ya sea como salsa,
+                puré,
+                jugo/zumo, deshidratado o enlatado.
+              </p>
+            </div>
+            <div class="col-md-24"> <img id="img"
+                src=" http://supercampo.perfil.com/wp-content/uploads/2016/10/tomate-org%C3%A1nico-624x429.jpg"
+                alt="..." class="img-thumbnail" style="height: 200px; width: 200px;"></div>
+          </div>
+          <p></p>
+        </div>
+
+        <!-- HUMEDAD-->
+        <div class="tab-pane fade" id="profile" role="Humedad" aria-labelledby="profile-tab">
+          <p></p>
+          <p>Las plantas necesitan agua porque es indispensable para la fotosíntesis y porque es el único elemento en el
+            que pueden disolverse las diferentes sales presentes en el suelo</p>
+          <div class="container" style="background-color:white">
+            <div class="item">
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1022210/charts/1?bgcolor=%23ffffff&color=%2333A5FF&dynamic=true&max=5&results=5&title=HUMEDAD+DEL+CULTIVO&type=line"></iframe>
+            </div>
+            <div class="item">
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1022210/widgets/173193"></iframe>
+            </div>
+            <div class="item">
+              <ul class="list-group">
+                <li class="list-group-item active">Recomendaciones</li>
+                <li class="list-group-item">La humedad relativa apropiada para el desarrollo de un tomate se encuentra
+                  alrededor de un 70%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- LUMINOCIDAD-->
+        <div class="tab-pane fade" id="contact" role="Luminocidad" aria-labelledby="contact-tab">
+          <p></p>
+          <p>Las plantas utilizan la luz solar para llevar a cabo la fotosíntesis. Como recordarás, la fotosíntesis es
+            un proceso biológico en el que las plantas y las algas marinas capturan la energía de la luz solar para
+            fabricar su propio alimento y liberar oxígeno a partir del dióxido de carbono y el agua.</p>
+
+          <div class="container" style="background-color:white">
+            <div class="item">
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1022210/charts/2?bgcolor=%23ffffff&color=%23F7D100&dynamic=true&max=5&min=0&results=5&title=LUMINOCIDAD+EN+EL+CULTIVO&type=line"></iframe>
+            </div>
+            <div class="item">
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1022210/widgets/173194"></iframe>
+            </div>
+            <div class="item">
+              <ul class="list-group">
+                <li class="list-group-item active">Recomendaciones</li>
+                <li class="list-group-item">La plata de tomate necesita de mucho sol, este no fructificará si no recibe
+                  al menos 6 horas diarias de
+                  luz
+                  solar.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!--<div class="container" style="background-color:white">
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1022210/charts/1?bgcolor=%23ffffff&color=%2333A5FF&dynamic=true&max=5&results=5&title=HUMEDAD+DEL+CULTIVO&type=line"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1022210/widgets/173193"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1022210/charts/2?bgcolor=%23ffffff&color=%23F7D100&dynamic=true&max=5&min=0&results=5&title=LUMINOCIDAD+EN+EL+CULTIVO&type=line"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1022210/widgets/173194"></iframe>
+      </div>
+    </div>
+  </div>-->
+    <!--END GRAFICAS-->
+
+
+    <script src="JS/index.js"></script>
+
+</body>
+
+</html>

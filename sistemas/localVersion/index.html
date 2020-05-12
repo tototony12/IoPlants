@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Equipo 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="onLoad()" background="pictures/p3.jpg">
+  <!-- INICIO BARRA-->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <a class="navbar-brand" href="index.html">Tus cultivos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+        <!--<li class="nav-item"><a href="blog.html" class="nav-link">Contac Us</a></li>-->
+        <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+        <a class="nav-item"><a href="logIn.html" class="nav-link" id="signOut">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- FIN BARRA -->
+
+  <!-- INICIO JUMOBTRON-->
+  <div class="container p-3 my-3 border" style="background-color:white;">
+    <div class="container" style="justify-content: space-between; flex-direction: row;">
+      <div class="col-md-6">
+        <h1>Bienvenido</h1>
+        <p>Seleccione la planta que desee monitorear</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="font-size: 90%;">
+            Seleccionar una opcion
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" onclick="jitomate()">Jitomate</a>
+            <a class="dropdown-item" href="#" onclick="lechuga()">Lechuga</a>
+            <a class="dropdown-item" href="#" onclick="cebolla()">Cebolla</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-24" style="display:none ;" id="imagenPlanta">
+        <img id="img" src="" alt="..." class="img-thumbnail" style="height: 200px; width: 200px;">
+      </div>
+    </div>
+  </div>
+  <!-- FIN JUMOBTRON-->
+
+  <!-- INICIO GRAFICAS-->
+  <div class="container p-3 my-3 border" id="graficas" style="background-color:white; display: none;">
+    <h1 style="margin-top: 15px;" id="nombrePlanta">Bienvenido</h1>
+    <div class="container" style="background-color:white">
+
+      <div class="item">
+        <iframe class="responsive-iframe" width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1023068/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5&title=HUMEDAD+DEL+CULTIVO&type=spline&yaxismax=5&yaxismin=0"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1023068/widgets/163669"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1023068/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5&title=LUMINOSIDAD+EN+EL+CULTIVO&type=line&yaxismax=5&yaxismin=0"></iframe>
+      </div>
+      <div class="item">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+          src="https://thingspeak.com/channels/1023068/widgets/163671"></iframe>
+      </div>
+    </div>
+  </div>
+  <!--END GRAFICAS-->
+
+
+  <script src="JS/index.js"></script>
+
+</body>
+
+</html>
